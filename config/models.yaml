@@ -1,0 +1,51 @@
+# Only destinations declared here can be returned by the router.
+# Replace placeholder video model ID with the exact ID enabled for your account.
+routes:
+  image_generation:
+    destination_type: model
+    destination_id: gemini-3.1-flash-image
+    capabilities: [image_generation, image_editing, vision]
+
+  advanced_reasoning:
+    destination_type: model
+    destination_id: gemini-3.1-pro-preview
+    capabilities: [reasoning, planning, agentic_chat, multimodal_input]
+
+  general_chat:
+    destination_type: model
+    destination_id: gemini-3.1-flash-lite
+    capabilities: [general_chat, summarization, routine_text]
+
+  video_generation_editing:
+    destination_type: model
+    destination_id: REPLACE_WITH_VERIFIED_VIDEO_MODEL_ID
+    capabilities: [video_generation, video_editing]
+
+  cinematic_video:
+    destination_type: model
+    destination_id: veo-3.1-generate-preview
+    capabilities: [cinematic_video_generation, audio_generation]
+
+  document_generation:
+    destination_type: sdk
+    destination_id: 100x
+    capability: document_generation
+    capabilities: [docx, pptx, xlsx, reports, file_editing]
+
+  data_analysis:
+    destination_type: sdk
+    destination_id: 100x
+    capability: data_analysis
+    capabilities: [dataset_analysis, reporting, insights]
+
+  coding:
+    destination_type: sdk
+    destination_id: 100x
+    capability: coding
+    capabilities: [code_generation, debugging, refactoring, repository_tasks]
+
+  web_research:
+    destination_type: sdk
+    destination_id: 100x
+    capability: web_research
+    capabilities: [web_search, source_comparison, evidence_synthesis]

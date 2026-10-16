@@ -1,0 +1,32 @@
+
+services:
+  intelligent-routing:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: intelligent-routing-layer
+
+    ports:
+      - "8085:8085"
+
+    env_file:
+      - .env
+
+    environment:
+      ROUTER_CONFIG: /app/config/models.yaml
+
+    restart: unless-stopped
+    init: true
+    stop_grace_period: 20s
+
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8085/health', timeout=3)"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
